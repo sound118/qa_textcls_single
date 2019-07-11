@@ -39,7 +39,7 @@ server <- function(input, output, session) {
   })
   
   # source("C:/Users/CNU074VP/Documents/ABO Feedback Text Classification/global.r")
-  model <- load_model("/home/jasonyang/txtcls_model.bin")
+  model <- load_model("/root/voc_single/txtcls_model.bin")
   
   output$value <- renderText({
     engine <- worker()
