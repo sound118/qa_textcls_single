@@ -47,11 +47,11 @@ RUN R -e "install.packages(c('shiny','rmarkdown'), repos='https://cloud.r-projec
 RUN R -e "install.packages(c('rJava','xlsx','readxl','readr','jiebaR','stringr','fastrtext') , repos='https://cloud.r-project.org/')"
 
 # copy the app to the image
-RUN mkdir /root/text_cls
-COPY text_cls /root/text_cls
+RUN mkdir /root/voc_single
+COPY voc_single /root/voc_single
 
 COPY Rprofile.site /usr/lib/R/etc/
 
 EXPOSE 3838
 
-CMD ["R", "-e", "shiny::runApp('/root/text_cls')"]
+CMD ["R", "-e", "shiny::runApp('/root/voc_single')"]
